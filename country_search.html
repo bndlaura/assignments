@@ -61,10 +61,10 @@
         const country = data[0];
 
         const name = country.name.common;
-        const capital = country.capital ? country.capital[0] : "N/A";
-        const language = country.languages ? Object.values(country.languages)[0] : "N/A";
+        const capital = country.capital ? country.capital[0] : "-";
+        const language = country.languages ? Object.values(country.languages)[0] : "-";
         const population = country.population.toLocaleString();
-        const currency = country.currencies ? Object.values(country.currencies)[0].name : "N/A";
+        const currency = country.currencies ? Object.values(country.currencies)[0].name : "-";
         const mapLink = country.maps.googleMaps;
         const flag = country.flags.svg;
 
