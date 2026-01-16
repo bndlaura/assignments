@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Country Search</title>
+</head>
+<body style="font-family: Arial; background:#f5f5f5; padding:40px;">
+
+<script>
+  // Container principal
+  const container = document.createElement("div");
+  container.style.maxWidth = "450px";
+  container.style.margin = "0 auto";
+  container.style.textAlign = "center";
+
+  const title = document.createElement("h1");
+  title.textContent = "Country Search";
+  title.style.marginBottom = "20px";
+
+  const input = document.createElement("input");
+  input.type = "text";
+  input.placeholder = "Type a country...";
+  input.style.padding = "10px";
+  input.style.width = "65%";
+  input.style.border = "1px solid #ccc";
+  input.style.borderRadius = "6px";
+  input.style.marginBottom = "10px";
+
+  const button = document.createElement("button");
+  button.textContent = "Search";
+  button.style.padding = "10px 15px";
+  button.style.marginLeft = "5px";
+  button.style.border = "none";
+  button.style.background = "#007bff";
+  button.style.color = "white";
+  button.style.borderRadius = "6px";
+  button.style.cursor = "pointer";
+
+  const rezultat = document.createElement("div");
+  rezultat.style.marginTop = "20px";
+
+  container.appendChild(title);
+  container.appendChild(input);
+  container.appendChild(button);
+  container.appendChild(rezultat);
+  document.body.appendChild(container);
+
+  button.addEventListener("click", () => {
+    const tara = input.value.trim().toLowerCase();
+    if (!tara) {
+      rezultat.textContent = "Please enter a country name.";
+      return;
+    }
+
+    fetch(`https://restcountries.com/v3.1/name/${tara}`)
+      .then(response => {
+        if (!response.ok) throw new Error("Country not found");
+        return response.json();
+      })
+      .then(data => {
+        const country = data[0];
+
+        const name = country.name.common;
+        const capital = country.capital ? country.capital[0] : "-";
+        const language = country.languages ? Object.values(country.languages)[0] : "-";
+        const population = country.population.toLocaleString();
+        const currency = country.currencies ? Object.values(country.currencies)[0].name : "-";
+        const mapLink = country.maps.googleMaps;
+        const flag = country.flags.svg;
+
+        rezultat.innerHTML = `
+          <div style="
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.1);
+          ">
+            <img src="${flag}" width="80" style="display:block; margin:0 auto 15px;">
+            <h2 style="text-align:center; margin:0 0 15px;">${name}</h2>
+
+            <div style="display:flex; justify-content:space-between; gap:20px;">
+
+              <div style="width:50%; text-align:left;">
+                <p><strong>Capital:</strong> ${capital}</p>
+                <p><strong>Language:</strong> ${language}</p>
+                <p><strong>Map:</strong> <a href="${mapLink}" target="_blank">Google Maps</a></p>
+              </div>
+
+              <div style="width:50%; text-align:left;">
+                <p><strong>Population:</strong> ${population}</p>
+                <p><strong>Currency:</strong> ${currency}</p>
+              </div>
+
+            </div>
+          </div>
+        `;
+      })
+      .catch(error => {
+        rezultat.textContent = error.message;
+      });
+  });
+</script>
+
+</body>
+</html>
