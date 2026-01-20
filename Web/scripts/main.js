@@ -9,3 +9,14 @@ async function loadComponent(id, file) {
 loadComponent("header", "header.html");
 loadComponent("menu", "menu.html");
 loadComponent("footer", "footer.html");
+
+document.addEventListener("DOMContentLoaded", () => {
+    const infoBox = document.querySelector(".project-panel");
+    const header = document.querySelector(".panel-header");
+
+    header.addEventListener("click", () => {
+        infoBox.classList.toggle("active");
+    });
+});
+
+
