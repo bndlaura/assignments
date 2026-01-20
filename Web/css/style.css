@@ -1,0 +1,157 @@
+.main-bg {
+    background-image: url("/Web/assets/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;      
+    background-attachment: fixed; 
+    min-height: 80vh;           
+    position: relative;
+}
+
+.main-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+    z-index: 0;
+}
+
+.main-bg .row {
+    min-height: 80vh;
+    display: flex;
+    align-items: stretch;
+}
+
+.site-header {
+    background: rgba(17, 4, 4, 0.947); 
+    color: white;           
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5); 
+    padding: 10px;
+}
+
+.site-header h1 {
+    padding-bottom: 5px;
+    letter-spacing: 2px;
+    font-weight: 300;        
+    font-family: "Montserrat", sans-serif; 
+}
+
+.site-menu {
+    position: sticky;
+    top: 0; 
+    height: 100vh;
+    overflow-y: auto;
+    background: rgba(69, 19, 19, 0.139);
+    backdrop-filter: blur(6px);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+}
+
+.site-menu .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+    position: relative;
+    padding-left: 0;
+    transition: color .3s ease;
+}
+
+.site-menu .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: width .3s ease;
+    border-radius: 2px;
+}
+
+.site-menu .nav-link:hover {
+    color: #ffffff;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+}
+
+.site-menu .nav-link:hover::after {
+    width: 100%;
+}
+
+#menu {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+.pet-card {
+    transition: transform .2s ease, box-shadow .2s ease;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.pet-card img {
+    height: 200px;        
+    width: 100%;          
+    object-fit: cover;    
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.pet-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+aside .card {
+    border-radius: 12px;
+}
+
+aside .card {
+    border-radius: 12px;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+aside .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(255,255,255,0.15);
+    backdrop-filter: blur(4px);
+    border-color: rgba(255,255,255,0.5);
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 6px;
+    font-weight: 300;        
+    font-family: "Montserrat", sans-serif; 
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 65%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+
+    .main-bg .row {
+        min-height: auto;
+        display: block;
+    }
+
+    .site-menu { 
+        position: static; 
+        height: auto; 
+        overflow: visible; }
+
+    main, aside {
+        min-height: auto;
+    }
+
+    .main-bg {
+        background-attachment: scroll;
+    }
+}
