@@ -4,7 +4,7 @@
     background-position: center;
     background-size: cover;      
     background-attachment: fixed; 
-    min-height: 80vh;           
+    min-height: auto;           
     position: relative;
 }
 
@@ -17,34 +17,53 @@
 }
 
 .main-bg .row {
-    min-height: 80vh;
+    min-height: auto;
     display: flex;
     align-items: stretch;
 }
 
 .site-header {
-    background: rgba(17, 4, 4, 0.947); 
-    color: white;           
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5); 
-    padding: 10px;
+    padding: 18px 10px;
+    background: linear-gradient(to bottom, rgb(23, 7, 7), rgba(37, 13, 13, 0.823));
+    border-bottom: 0.1px solid rgb(146, 145, 145);
 }
 
-.site-header h1 {
-    padding-bottom: 5px;
-    letter-spacing: 2px;
-    font-weight: 300;        
-    font-family: "Montserrat", sans-serif; 
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.header-icon {
+    position: absolute;
+    padding: 1rem;
+    left: 0;
+    font-size: 1.9rem;
+    opacity: 0.9;
+    color: rgb(201, 201, 201);
+}
+
+.section-header {
+    letter-spacing: 3px;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    position: relative;
 }
 
 .site-menu {
     position: sticky;
     top: 0; 
-    height: 100vh;
+    height: 90vh;
     overflow-y: auto;
     background: rgba(69, 19, 19, 0.139);
     backdrop-filter: blur(6px);
     border-right: 1px solid rgba(255, 255, 255, 0.3);
     padding: 20px;
+        display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
 }
 
 .site-menu .nav-link {
@@ -135,7 +154,91 @@ aside .card:hover {
     border-radius: 2px;
 }
 
+.project-panel {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 14px;
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+    transition: .3s ease;
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    cursor: pointer;
+}
+
+.panel-icon {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.panel-title {
+    flex: 1;
+    color: white;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.panel-arrow {
+    color: white;
+    font-size: 1.2rem;
+    transition: transform .3s ease;
+}
+
+.panel-body {
+    display: none;
+    padding: 20px;
+    color: rgba(242, 242, 242, 0.85);
+    line-height: 1.6;
+}
+
+.project-panel.active .panel-body {
+    display: block;
+}
+
+.project-panel.active .panel-arrow {
+    transform: rotate(180deg);
+}
+
+.menu-cta {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.menu-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    backdrop-filter: blur(4px);
+    transition: .3s ease;
+}
+
+.menu-btn:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-2px);
+}
+
+
 @media (max-width: 768px) {
+
+    .header-icon { 
+        font-size: 1.3rem; 
+        left: 10px; padding: 0; 
+    } 
+    
+    .section-header { 
+        font-size: 1.1rem; 
+        padding-left: 30px; 
+    }
 
     .main-bg .row {
         min-height: auto;
@@ -144,8 +247,20 @@ aside .card:hover {
 
     .site-menu { 
         position: static; 
-        height: auto; 
-        overflow: visible; }
+        height: auto; display: 
+        block; padding-bottom: 40px; 
+    } 
+    
+    .menu-links { 
+        max-height: none; 
+        overflow: visible; 
+    } 
+    
+    .menu-cta { 
+        margin-top: 20px; 
+        border-top: 1px solid rgba(255,255,255,0.2); 
+        padding-top: 20px; 
+    }
 
     main, aside {
         min-height: auto;
