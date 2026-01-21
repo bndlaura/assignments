@@ -1,0 +1,31 @@
+.main-bg {
+    background-image: url("/Photography-Studio/Sass-Version/assets/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;      
+    background-attachment: fixed; 
+    min-height: auto;           
+    position: relative;
+
+    &::before {
+        content: "";
+        @include position-absolute();
+        background: $overlay-dark;
+        z-index: 0;
+    }
+
+    .row {
+        min-height: auto;
+        display: flex;
+        align-items: stretch;
+    }
+
+    @include respond-to("md") {
+        background-attachment: scroll;
+        
+        .row {
+            min-height: auto;
+            display: block;
+        }
+    }
+}

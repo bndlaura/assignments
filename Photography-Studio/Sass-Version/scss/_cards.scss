@@ -1,0 +1,38 @@
+.pet-card {
+    @include transition(transform $transition-fast, box-shadow $transition-fast);
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+
+    img {
+        height: 200px;        
+        width: 100%;          
+        object-fit: cover;    
+        border-top-left-radius: $border-radius-lg;
+        border-top-right-radius: $border-radius-lg;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+}
+
+aside {
+    .card {
+        border-radius: $border-radius-lg;
+        transition: transform $transition-smooth, box-shadow $transition-smooth, border-color $transition-smooth;
+
+        &:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px $glow-box;
+            backdrop-filter: blur(4px);
+            border-color: $glow-border;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-md) {
+    main, aside {
+        min-height: auto;
+    }
+}

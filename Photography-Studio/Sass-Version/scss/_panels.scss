@@ -1,0 +1,51 @@
+.project-panel {
+    background: $glass-bg-dark;
+    border: 1px solid $border-subtle;
+    border-radius: $border-radius-xl;
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+    @include transition(.3s ease);
+}
+
+.panel-header {
+    @include flex-center();
+    justify-content: space-between;
+    padding: 16px 20px;
+    cursor: pointer;
+}
+
+.panel-icon {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.panel-title {
+    flex: 1;
+    color: $text-white;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.panel-arrow {
+    color: $text-white;
+    font-size: 1.2rem;
+    @include transition(transform .3s ease);
+}
+
+.panel-body {
+    display: none;
+    padding: 20px;
+    color: $text-light;
+    line-height: 1.6;
+}
+
+.project-panel.active {
+    .panel-body {
+        display: block;
+    }
+
+    .panel-arrow {
+        transform: rotate(180deg);
+    }
+}
