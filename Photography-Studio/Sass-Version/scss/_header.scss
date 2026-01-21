@@ -1,0 +1,40 @@
+.site-header {
+    padding: 18px 10px;
+    background: linear-gradient(to bottom, $primary-bg, $primary-bg-light);
+    border-bottom: 0.1px solid $border-top;
+}
+
+.header-inner {
+    @include flex-center();
+    position: relative;
+}
+
+.header-icon {
+    position: absolute;
+    padding: 1rem;
+    left: 0;
+    font-size: 1.9rem;
+    opacity: 0.9;
+    color: $text-primary;
+}
+
+.section-header {
+    letter-spacing: 3px;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-family: $font-montserrat;
+    position: relative;
+}
+
+@media (max-width: $breakpoint-md) {
+    .header-icon { 
+        font-size: 1.3rem; 
+        left: 10px; 
+        padding: 0; 
+    } 
+    
+    .section-header { 
+        font-size: 1.1rem; 
+        padding-left: 30px; 
+    }
+}

@@ -1,0 +1,82 @@
+// Flexbox centering mixin
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Flex column mixin
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+// Absolute positioning mixin
+@mixin position-absolute($top: 0, $right: 0, $bottom: 0, $left: 0) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+// Transition mixin
+@mixin transition($property: all, $duration: $transition-default) {
+    transition: $property $duration;
+}
+
+// Text truncate mixin
+@mixin truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Responsive mixin
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == "md" {
+        @media (max-width: #{$breakpoint-md}) {
+            @content;
+        }
+    } @else if $breakpoint == "lg" {
+        @media (max-width: #{$breakpoint-lg}) {
+            @content;
+        }
+    }
+}
+
+// Hover scale effect
+@mixin hover-scale($scale: 1.05) {
+    &:hover {
+        transform: scale($scale);
+    }
+}
+
+// Hover glow effect
+@mixin hover-glow($color: rgba(255, 255, 255, 0.6)) {
+    &:hover {
+        color: $text-white;
+        text-shadow: 0 0 6px $color;
+    }
+}
+
+// Underline animation mixin
+@mixin underline-animation($width: 100%, $duration: .3s) {
+    position: relative;
+    
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 0%;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.8);
+        transition: width $duration ease;
+        border-radius: $border-radius-sm;
+    }
+    
+    &:hover::after {
+        width: $width;
+    }
+}
