@@ -1,11 +1,54 @@
-// Variables and Configuration
-@import 'variables';
-@import 'mixins';
+@import "variables";
+@import "mixins";
+@import "typography";
+@import "header";
+@import "menu";
+@import "background";
+@import "cards";
+@import "panels";
 
-// Component Styles
-@import 'background';
-@import 'header';
-@import 'menu';
-@import 'cards';
-@import 'typography';
-@import 'panels';
+@media (max-width: $breakpoint-md) {
+    .header-icon { 
+        font-size: 1.3rem; 
+        left: 10px; 
+        padding: 0; 
+    } 
+    
+    .section-header { 
+        font-size: 1.1rem; 
+        padding-left: 30px; 
+    }
+
+    .main-bg .row {
+        min-height: unset;
+        display: block;
+    }
+
+    .site-menu {
+        position: static;     
+        min-height: unset;    
+        height: auto;       
+        display: block;     
+        overflow: visible;  
+        padding-bottom: $padding-lg;
+    }
+
+    .menu-links {
+        overflow: visible;
+        max-height: none;
+    }
+
+    .menu-cta {
+        margin-top: 20px;
+        border-top: 1px solid $white-opacity-20;
+        padding-top: $padding-lg;
+    }
+
+    main, aside {
+        min-height: unset;
+    }
+
+    .main-bg {
+        background-attachment: scroll;
+    }
+}

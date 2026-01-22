@@ -1,18 +1,18 @@
-.section-title {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 6px;
-    font-weight: 300;        
-    font-family: $font-montserrat;
+body {
+    color: $white-opacity-85;
+    font-family: "Montserrat", sans-serif;
+}
 
-    &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 65%;
-        height: 2px;
-        background: rgba(255, 255, 255, 0.7);
-        border-radius: $border-radius-sm;
-    }
+h1, h2, h3, h4, h5, h6 {
+    @include text-uppercase;
+    font-weight: 300;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    line-height: 1.6;
 }

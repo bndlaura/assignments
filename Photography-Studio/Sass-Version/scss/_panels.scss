@@ -1,41 +1,42 @@
 .project-panel {
-    background: $glass-bg-dark;
-    border: 1px solid $border-subtle;
-    border-radius: $border-radius-xl;
+    background: $white-opacity-06;
+    border: 1px solid $white-opacity-18;
+    border-radius: 14px;
     backdrop-filter: blur(8px);
     overflow: hidden;
-    @include transition(.3s ease);
+    @include transition(all $transition-normal);
 }
 
 .panel-header {
-    @include flex-center();
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 16px 20px;
+    padding: $padding-md 20px;
     cursor: pointer;
 }
 
 .panel-icon {
-    color: rgba(255, 255, 255, 0.8);
+    color: $white-opacity-80;
     font-size: 1.2rem;
     margin-right: 10px;
 }
 
 .panel-title {
     flex: 1;
-    color: $text-white;
+    color: $white;
     font-size: 1.1rem;
     letter-spacing: 1px;
 }
 
 .panel-arrow {
-    color: $text-white;
+    color: $white;
     font-size: 1.2rem;
-    @include transition(transform .3s ease);
+    @include transition(transform $transition-normal);
 }
 
 .panel-body {
     display: none;
-    padding: 20px;
+    padding: $padding-lg;
     color: $text-light;
     line-height: 1.6;
 }

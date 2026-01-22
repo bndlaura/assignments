@@ -1,5 +1,5 @@
 .main-bg {
-    background-image: url("/Photography-Studio/Sass-Version/assets/bg.jpg");
+    background-image: url("/Photography-Studio/CSS-Version/assets/bg.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;      
@@ -9,8 +9,8 @@
 
     &::before {
         content: "";
-        @include position-absolute();
-        background: $overlay-dark;
+        @include absolute-overlay;
+        background: $dark-overlay;
         z-index: 0;
     }
 
@@ -18,14 +18,5 @@
         min-height: auto;
         display: flex;
         align-items: stretch;
-    }
-
-    @include respond-to("md") {
-        background-attachment: scroll;
-        
-        .row {
-            min-height: auto;
-            display: block;
-        }
     }
 }

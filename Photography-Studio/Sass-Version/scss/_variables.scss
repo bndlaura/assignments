@@ -1,44 +1,36 @@
-// Variables & Colors
-$primary-bg: rgb(23, 7, 7);
-$primary-bg-light: rgba(37, 13, 13, 0.823);
-$text-primary: rgb(201, 201, 201);
-$text-white: #ffffff;
-$text-muted: rgba(255, 255, 255, 0.85);
-$text-light: rgba(242, 242, 242, 0.85);
-$border-light: rgba(255, 255, 255, 0.3);
-$border-subtle: rgba(255, 255, 255, 0.18);
-$overlay-dark: rgba(0, 0, 0, 0.25);
-$glass-bg: rgba(69, 19, 19, 0.139);
-$glass-bg-dark: rgba(255, 255, 255, 0.06);
-$glass-bg-hover: rgba(255, 255, 255, 0.15);
-$glass-bg-hover-light: rgba(255, 255, 255, 0.25);
-
-// Border colors
-$border-right: rgba(255, 255, 255, 0.3);
-$border-top: rgb(146, 145, 145);
-$border-top-subtle: rgba(255, 255, 255, 0.2);
-
-// Glow effects
-$glow-text: rgba(255, 255, 255, 0.6);
-$glow-border: rgba(255, 255, 255, 0.5);
+// Colors
+$dark-bg: rgba(69, 19, 19, 0.139);
+$header-bg: linear-gradient(to bottom, rgb(23, 7, 7), rgba(37, 13, 13, 0.823));
+$white: #ffffff;
+$white-opacity-85: rgba(255, 255, 255, 0.85);
+$white-opacity-80: rgba(255, 255, 255, 0.8);
+$white-opacity-70: rgba(255, 255, 255, 0.7);
+$white-opacity-60: rgba(255, 255, 255, 0.6);
+$white-opacity-50: rgba(255, 255, 255, 0.5);
+$white-opacity-30: rgba(255, 255, 255, 0.3);
+$white-opacity-25: rgba(255, 255, 255, 0.25);
+$white-opacity-18: rgba(255, 255, 255, 0.18);
+$white-opacity-15: rgba(255, 255, 255, 0.15);
+$white-opacity-06: rgba(255, 255, 255, 0.06);
+$white-opacity-20: rgba(255, 255, 255, 0.2);
+$light-gray: rgb(201, 201, 201);
+$gray-border: rgb(146, 145, 145);
+$dark-overlay: rgba(0, 0, 0, 0.25);
+$shadow-dark: rgba(0, 0, 0, 0.25);
 $glow-box: rgba(255, 255, 255, 0.15);
+$text-light: rgba(242, 242, 242, 0.85);
 
-// Spacing & Sizing
-$spacing-unit: 1rem;
-$border-radius-sm: 2px;
-$border-radius-md: 8px;
+// Sizes
 $border-radius-lg: 12px;
-$border-radius-xl: 14px;
-
-// Typography
-$font-default: system-ui, -apple-system, sans-serif;
-$font-montserrat: "Montserrat", sans-serif;
+$border-radius-md: 8px;
+$padding-lg: 20px;
+$padding-md: 16px;
+$padding-sm: 10px;
 
 // Transitions
-$transition-fast: .2s ease;
-$transition-default: .3s ease;
-$transition-smooth: .25s ease;
+$transition-fast: 0.2s ease;
+$transition-smooth: 0.25s ease;
+$transition-normal: 0.3s ease;
 
 // Breakpoints
 $breakpoint-md: 768px;
-$breakpoint-lg: 992px;

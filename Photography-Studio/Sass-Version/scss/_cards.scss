@@ -13,26 +13,39 @@
 
     &:hover {
         transform: scale(1.05);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 8px 20px $shadow-dark;
     }
 }
 
 aside {
     .card {
         border-radius: $border-radius-lg;
-        transition: transform $transition-smooth, box-shadow $transition-smooth, border-color $transition-smooth;
+        @include transition(transform $transition-smooth, box-shadow $transition-smooth, border-color $transition-smooth);
 
         &:hover {
             transform: translateY(-6px);
             box-shadow: 0 10px 25px $glow-box;
             backdrop-filter: blur(4px);
-            border-color: $glow-border;
+            border-color: $white-opacity-50;
         }
     }
 }
 
-@media (max-width: $breakpoint-md) {
-    main, aside {
-        min-height: auto;
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 6px;
+    font-weight: 300;        
+    @include text-uppercase;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 65%;
+        height: 2px;
+        background: $white-opacity-70;
+        border-radius: 2px;
     }
 }
