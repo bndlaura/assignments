@@ -1,3 +1,4 @@
+/* index.html */
 body.entry-bg {
     background: radial-gradient(circle at top left, #1e3c72, #2a5298);
     font-family: "Segoe UI", sans-serif;
@@ -58,10 +59,7 @@ body.entry-bg {
     box-shadow: 0 6px 18px rgba(255, 255, 255, 0.3);
 }
 
-
-
-
-
+/* app.html */
 .app-body {
     margin: 0;
     padding: 0;
@@ -228,7 +226,6 @@ body.entry-bg {
 .msg {
     max-width: 60%;
     padding: 0.9rem 1.2rem;
-    margin-bottom: 0.9rem;
     border-radius: 14px;
     color: #1e3c72;
 }

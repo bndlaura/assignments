@@ -41,19 +41,19 @@
                 <input type="text" placeholder="Search chats...">
             </div>
 
-            <button class="chat-item">
+            <button class="chat-item" data-name="Adela">
                 <img class="chat-avatar-img" src="assets/no_pic.png" alt="">
                 <div class="chat-meta">
                     <p class="chat-name">Adela</p>
-                    <p class="chat-preview">Ce faci fata?</p>
+                    <p class="chat-preview" data-preview="Adela"></p>
                 </div>
             </button>
 
-            <button class="chat-item">
+            <button class="chat-item" data-name="Alina">
                 <img class="chat-avatar-img" src="assets/no_pic.png" alt="">
                 <div class="chat-meta">
-                    <p class="chat-name">Laura</p>
-                    <p class="chat-preview">Ceau</p>
+                    <p class="chat-name">Alina</p>
+                    <p class="chat-preview" data-preview="Alina"></p>
                 </div>
             </button>
 
@@ -73,10 +73,7 @@
                 </button>
             </header>
 
-            <div class="chat-messages">
-                <div class="msg msg-left">Fata</div>
-                <div class="msg msg-right">Ce faci fata?</div>
-            </div>
+            <div class="chat-messages"></div>
 
             <div class="chat-input">
                 <input type="text" placeholder="Type a message...">
@@ -86,6 +83,9 @@
         </section>
 
     </div>
-
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
