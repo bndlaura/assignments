@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Canvas Shapes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <main class="main">
+        <div id="title" class="title">Click a button to add a shape</div>
+        <canvas id="draw"></canvas>
+      </main>
+
+      <aside class="sidebar">
+        <div class="legend">
+          <h3>Info</h3>
+          <div class="info-item"><span class="label">Window W:</span> <span id="windowWidth">0</span>px</div>
+          <div class="info-item"><span class="label">Window H:</span> <span id="windowHeight">0</span>px</div>
+          <div class="info-item"><span class="label">Canvas W:</span> <span id="canvasWidth">0</span>px</div>
+          <div class="info-item"><span class="label">Canvas H:</span> <span id="canvasHeight">0</span>px</div>
+          <div class="info-item"><span class="label">Page scroll X:</span> <span id="pageScrollX">0</span>px</div>
+          <div class="info-item"><span class="label">Page scroll Y:</span> <span id="pageScrollY">0</span>px</div>
+        </div>
+        <div class="buttons-group">
+          <button class="shape-btn circle" data-shape="circle" aria-label="Circle"></button>
+          <button class="shape-btn square" data-shape="square" aria-label="Square"></button>
+          <button class="shape-btn triangle" data-shape="triangle" aria-label="Triangle"></button>
+          <label class="collision-checkbox">
+            <input type="checkbox" id="collisionAvoidance" />
+            <span>Collision</span>
+          </label>
+        </div>
+        <div class="hint">Double-click the canvas to clear</div>
+      </aside>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
