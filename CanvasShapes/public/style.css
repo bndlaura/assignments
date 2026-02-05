@@ -13,7 +13,7 @@ html,body {
 }
 
 .sidebar { 
-    width: 150px; 
+    width: 160px; 
     background: #f7f7f8; 
     display:flex; 
     flex-direction:column; 
