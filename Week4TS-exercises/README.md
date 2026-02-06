@@ -1,2 +1,3 @@
 # Week4TS-exercises
-Am folosit un playground pentru a rula fisierul TS
+
+I used a playground to run the TypeScript file

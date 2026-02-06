@@ -1,2 +1,7 @@
-# ChatApp
-Aplicație simplă de chat cu server Node.js (fișiere sursă în `server.js` și `public/`)
+# Chat App
+
+A messaging application, allows users to send and receive messages in real-time
+
+## How to Run
+
+Open `index.html` in a web browser
